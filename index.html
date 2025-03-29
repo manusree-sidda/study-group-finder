@@ -1,1 +1,136 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMU Study Group Finder</title>
+Expand
+message.txt
+4 KB
+document.addEventListener("DOMContentLoaded", () => {
+  // Navigation functionality
+  const navLinks = document.querySelectorAll("nav a")
+  const sections = document.querySelectorAll(".section")
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      // Remove active class from all links and sections
+      navLinks.forEach((link) => link.classList.remove("active"))
+      sections.forEach((section) => section.classList.remove("active"))
+
+      // Add active class to clicked link
+      this.classList.add("active")
+
+      // Show the corresponding section
+      const sectionId = this.getAttribute("data-section")
+      document.getElementById(sectionId).classList.add("active")
+    })
+  })
+
+  // Getting Started button functionality
+  const getStartedBtn = document.getElementById("getting-started")
+  getStartedBtn.addEventListener("click", () => {
+    // Remove active class from all links and sections
+    navLinks.forEach((link) => link.classList.remove("active"))
+    sections.forEach((section) => section.classList.remove("active"))
+
+    // Activate the Find Groups section
+    document.querySelector('nav a[data-section="find"]').classList.add("active")
+    document.getElementById("find").classList.add("active")
+  })
+})
+﻿
+Manu
+manu045603
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMU Study Group Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="tamu-logo.png" alt="Texas A&M University Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active" data-section="home">Home</a></li>
+                <li><a href="#find" data-section="find">Find Groups</a></li>
+                <li><a href="#create" data-section="create">Create Group</a></li>
+                <li><a href="#my-groups" data-section="my-groups">My Groups</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Find Your Perfect Study Group</h1>
+                <p>Connect with fellow Aggies and excel in your classes together</p>
+                <button id="getting-started" class="cta-button">Getting Started</button>
+            </div>
+            
+            <div class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">1</div>
+                        <h3>Sign Up</h3>
+                        <p>Create an account with your TAMU email</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">2</div>
+                        <h3>Find Groups</h3>
+                        <p>Search for study groups by course or subject</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">3</div>
+                        <h3>Join & Study</h3>
+                        <p>Connect with classmates and improve together</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Find Groups Section -->
+        <section id="find" class="section">
+            <h1>Find Study Groups</h1>
+            <p>This is where you would search for existing study groups.</p>
+        </section>
+
+        <!-- Create Group Section -->
+        <section id="create" class="section">
+            <h1>Create a Study Group</h1>
+            <p>This is where you would create your own study group.</p>
+        </section>
+
+        <!-- My Groups Section -->
+        <section id="my-groups" class="section">
+            <h1>My Study Groups</h1>
+            <p>This is where you would see your joined study groups.</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1>About TAMU Study Group Finder</h1>
+            <p>This is where you would learn more about this service.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TAMU Study Group Finder</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+message.txt
+4 KB
